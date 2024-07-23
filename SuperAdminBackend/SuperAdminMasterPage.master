@@ -1,0 +1,457 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SuperAdminMasterPage.master.cs" Inherits="SuperAdminBackend_SuperAdminMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+     <style>
+        .font {
+            font-family: 'Philosopher', sans-serif;
+            background-image: url('../Image/backgound12.png');
+            background-size: cover;
+            background-position:75%;
+            font-size: 15px;
+        }
+        .colorfont{
+            color:white;
+            font-family: 'Crimson Text', serif;
+            font-size:large;
+        }
+        .background{
+             background-image: url('../Image/background45.png');
+            background-size: cover;
+             background-position:75%;
+        }
+        
+        
+
+    </style>
+        <style>
+     .Grid {background-color: #fff; margin: 5px 0 10px 0; border: solid 1px #525252; border-collapse:collapse; font-family:Calibri; color: #474747;}
+
+.Grid td {
+
+      padding: 2px;
+
+      border: solid 1px #c1c1c1; }
+
+.Grid th  {
+
+      padding : 4px 2px;
+
+      color: #fff;
+
+      background: #363670 url(Images/grid-header.png) repeat-x top;
+
+      border-left: solid 1px #525252;
+
+      font-size: 0.9em; }
+
+.Grid .alt {
+
+      background: #fcfcfc url(Images/grid-alt.png) repeat-x top; }
+
+.Grid .pgr {background: #363670 url(Images/grid-pgr.png) repeat-x top; }
+
+.Grid .pgr table { margin: 3px 0; }
+
+.Grid .pgr td { border-width: 0; padding: 0 6px; border-left: solid 1px #666; font-weight: bold; color: #fff; line-height: 12px; }  
+
+.Grid .pgr a { color: Gray; text-decoration: none; }
+
+.Grid .pgr a:hover { color: #000; text-decoration: none; }
+ </style>
+    <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+ 
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+  <!-- Theme style -->
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body  class="hold-transition sidebar-mini layout-fixed">
+    <form id="form1" runat="server">
+    <div>
+        <div class="wrapper">
+         <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light background">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="Dashboard.aspx" class="nav-link">Dashboard</a>
+      </li>
+     
+    </ul>
+
+   
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+     
+      <li class="nav-item">
+         <asp:LinkButton CssClass="nav-link" data-slide="true" runat="server" ID="lbLogout" OnClick="lbLogout_Click" role="button">
+          <i class="fas fa-sign-out-alt"></i>
+        </asp:LinkButton>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4 font">
+    <!-- Brand Logo -->
+    <a href="Dashboard.aspx" class="brand-link">
+      <img src="dist/img/ProjectLogo.jpeg" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">NPC & VB</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Administrator</a>
+        </div>
+      </div>
+       
+      
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="Dashboard.aspx" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p class="colorfont">
+                Dashboard
+                
+              </p>
+            </a>
+              </li>
+              <li class="nav-item">
+            <asp:HyperLink NavigateUrl="~/SuperAdminBackend/PopupBanner.aspx" runat="server" ID="hlmpb" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p class="colorfont">
+               Manage Popup Banner
+                
+              </p>
+            </asp:HyperLink>
+              </li>
+             <li class="nav-item">
+            <asp:HyperLink  NavigateUrl="~/SuperAdminBackend/ManageStaff.aspx" CssClass="nav-link" ID="hlStaff" runat="server">
+              <i class="nav-icon fas fa-id-card"></i>
+              <p class="colorfont">
+               Staff Management
+              </p>
+            </asp:HyperLink>
+              </li>
+            <li class="nav-item">
+                <asp:HyperLink ID="hlwc" runat="server" NavigateUrl="#" class="nav-link">
+                    <i class="nav-icon fas fa-globe"></i>
+                    <p class="colorfont">
+                        Website Content
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </asp:HyperLink>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                <asp:HyperLink runat="server" ID="HyperLink1" NavigateUrl="~/SuperAdminBackend/ManageTeam.aspx" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p class="colorfont">Our Awesome Team</p>
+                </asp:HyperLink>
+              </li>
+              <li class="nav-item">
+                <asp:HyperLink runat="server" ID="hlmsi" NavigateUrl="~/SuperAdminBackend/MainSlider.aspx" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p class="colorfont">Main Slider Images</p>
+                </asp:HyperLink>
+              </li>
+                     <li class="nav-item">
+                <asp:HyperLink runat="server" ID="hlss" NavigateUrl="~/SuperAdminBackend/SmallSlider.aspx" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p class="colorfont">Sliding Statement</p>
+                </asp:HyperLink>
+              </li>
+                    <li class="nav-item">
+                        <asp:HyperLink runat="server" ID="hld" NavigateUrl="~/SuperAdminBackend/Downloads.aspx" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                            <p class="colorfont">Downloads</p>
+                        </asp:HyperLink>
+                    </li>
+                    
+                     <li class="nav-item">
+                <asp:HyperLink runat="server" ID="hlgi" NavigateUrl="~/SuperAdminBackend/GalleryImage.aspx" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p class="colorfont">Gallery Images</p>
+                </asp:HyperLink>
+              </li>
+               <li class="nav-item">
+                <asp:HyperLink runat="server" ID="hlaft" NavigateUrl="~/SuperAdminBackend/AddFreeTest.aspx" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p class="colorfont">Add Free Test</p>
+                </asp:HyperLink>
+              </li>
+            </ul>
+            </li>
+            <li class="nav-item">
+            <asp:HyperLink ID="hlmc" runat="server" NavigateUrl="~/SuperAdminBackend/ManageCenters.aspx" class="nav-link">
+              <i class="nav-icon fas fa-check-square"></i>
+              <p class="colorfont">
+                Centers Verification
+              </p>
+            </asp:HyperLink>
+          </li>
+             <li class="nav-item">
+            <asp:HyperLink runat="server" ID="hldv" NavigateUrl="~/SuperAdminBackend/DistributorVerification.aspx" class="nav-link">
+              <i class="nav-icon fas fa-check-square"></i>
+              <p class="colorfont">
+                Distributor Verification
+              </p>
+            </asp:HyperLink>
+          </li>
+
+             <li class="nav-item">
+            <asp:HyperLink ID="hlsv" runat="server" NavigateUrl="#" class="nav-link">
+              <i class="nav-icon fas fa-check"></i>
+              <p class="colorfont">
+                Student Verification 
+                  <i class="fas fa-angle-left right"></i>             
+              </p>
+            </asp:HyperLink>
+                 <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <asp:HyperLink ID="hlms" runat="server" NavigateUrl="~/SuperAdminBackend/ManageStudent.aspx" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                            <p class="colorfont">Verify Student</p>
+                        </asp:HyperLink>
+                    </li>
+                      <li class="nav-item">
+                        <asp:HyperLink ID="hlps" runat="server" NavigateUrl="~/SuperAdminBackend/PendingCenterAllocation.aspx" class="nav-link">
+                             <i class="far fa-circle nav-icon"></i>
+                            <p class="colorfont">Student Pending</p>
+                        </asp:HyperLink>
+                    </li>
+                     </ul>
+          </li>
+
+            <li class="nav-item">
+                <asp:HyperLink ID="hlcm" runat="server" NavigateUrl="#" class="nav-link">
+                    <i class="nav-icon fas fa-globe"></i>
+                    <p class="colorfont">
+                        Course Management
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </asp:HyperLink>
+                <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <asp:HyperLink ID="hlct" runat="server" NavigateUrl="~/SuperAdminBackend/AddCourseType.aspx" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p class="colorfont">Course Type</p>
+                </asp:HyperLink>
+              </li>
+                     <li class="nav-item">
+                <asp:HyperLink ID="hlnc" runat="server" NavigateUrl="~/SuperAdminBackend/CourseManagement.aspx" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p class="colorfont">New Course</p>
+                </asp:HyperLink>
+              </li>
+                   
+               
+            </ul>
+            </li>
+
+            <li class="nav-item">
+            <asp:HyperLink ID="hlew" runat="server" NavigateUrl="~/SuperAdminBackend/eWallet.aspx" class="nav-link">
+              <i class="nav-icon fas fa-coins"></i>
+              <p class="colorfont">
+               e-Wallet
+              </p>
+            </asp:HyperLink>
+          </li>
+        
+            <li class="nav-item">
+            <asp:HyperLink ID="hlsc" runat="server" NavigateUrl="~/SuperAdminBackend/StudentCertification.aspx" class="nav-link">
+              <i class="nav-icon fas fa-address-card"></i>
+              <p class="colorfont">
+                Student Certification
+              </p>
+            </asp:HyperLink>
+          </li>
+          
+            <li class="nav-item">
+            <asp:HyperLink ID="hlcl" runat="server" NavigateUrl="~/SuperAdminBackend/CenterList.aspx" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p class="colorfont">
+                Center List
+              </p>
+            </asp:HyperLink>
+          </li>
+              <li class="nav-item">
+            <asp:HyperLink ID="hldl" runat="server" NavigateUrl="~/SuperAdminBackend/DistributorList.aspx" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p class="colorfont">
+                Distributor List
+              </p>
+            </asp:HyperLink>
+          </li>
+            <li class="nav-item">
+            <asp:HyperLink ID="hlsl" runat="server" NavigateUrl="~/SuperAdminBackend/StudentList.aspx" class="nav-link">
+              <i class="nav-icon fas fa-list-alt"></i>
+              <p class="colorfont">
+                Student List
+              </p>
+            </asp:HyperLink>
+          </li>
+          
+            <li class="nav-item">
+            <asp:HyperLink ID="hlE" runat="server" NavigateUrl="~/SuperAdminBackend/MainExam.aspx" class="nav-link">
+              <i class="nav-icon fas fa-list-ol"></i>
+              <p class="colorfont">
+                Exams
+                
+              </p>
+            </asp:HyperLink>
+               
+          </li>
+           <%-- <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-bar"></i>
+              <p class="colorfont">
+                Center Performance
+              </p>
+            </a>
+          </li>--%>
+            <li class="nav-item">
+            <asp:HyperLink ID="hlcr" runat="server" NavigateUrl="~/SuperAdminBackend/CenterRenewal.aspx" class="nav-link">
+              <i class="nav-icon fas fa-recycle"></i>
+              <p class="colorfont">
+                Center Renewal
+              </p>
+            </asp:HyperLink>
+          </li>
+            <li class="nav-item">
+            <asp:HyperLink ID="hlvcq" runat="server" NavigateUrl="~/SuperAdminBackend/CenterQuerys.aspx" class="nav-link">
+              <i class="nav-icon fas fa-question"></i>
+              <p class="colorfont">
+               View Center Querries
+              </p>
+            </asp:HyperLink>
+          </li>           
+            <li class="nav-item">
+            <asp:HyperLink ID="hlsn" runat="server" NavigateUrl="~/SuperAdminBackend/SendNotifocation.aspx" class="nav-link">
+              <i class="nav-icon fas fa-bell"></i>
+              <p class="colorfont">
+                Send Notification
+              </p>
+            </asp:HyperLink>
+          </li>
+            
+            <li class="nav-item">
+            <asp:HyperLink ID="hlcp" runat="server" NavigateUrl="~/SuperAdminBackend/ChangePassword.aspx" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p class="colorfont">
+                Change Password
+                
+              </p>
+            </asp:HyperLink>
+          </li>
+             <li class="nav-item">
+            <asp:LinkButton ID="hlLogout" runat="server" CssClass="nav-link" OnClick="logout_click">
+              <i class="fas fa-sign-out-alt nav-icon"></i>
+              <p class="colorfont">Log Out</p>
+            </asp:LinkButton>
+          </li>            
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <footer class="main-footer">
+    <strong>Copyright &copy; 2020 <a href="https://jaynatechnologies.com/">Jayna Technologies</a></strong>
+  
+    <div class="float-right d-none d-sm-inline-block">
+     
+    </div>
+            </footer>
+            
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+    </div>
+        </div>
+    </form>
+    <script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
+</body>
+</html>

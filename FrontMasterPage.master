@@ -1,0 +1,645 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FrontMasterPage.master.cs" Inherits="FrontMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/efluidmenu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1120310c44.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <style>
+        h2 {
+  animation: color-change3 4s infinite;
+}
+
+@keyframes color-change3 {
+  0% {color: blue; }
+  25% {color: deeppink; }
+  50%{color: darkblue;}
+  75%{color:darkgreen;}
+  100% {color: black; }
+}
+        .sel{
+            text-decoration:none;
+            color:#fff;
+           
+           font-family: 'Courgette', cursive;
+            font-size:22px;
+            letter-spacing:2px;
+        }
+        .sel:hover
+        {
+            text-decoration:none;
+            text-decoration-color:none;
+        }
+        .footmen{
+            text-decoration-line:none; 
+            color:white;
+        }
+        .footmen:hover
+        {
+             text-decoration-line:none; 
+            background-color:maroon;
+            color:yellow;
+        }
+        .mainmenu{
+           color:#fff!important;
+            font-size:13px;
+            padding:10px;
+           
+           font-family: 'Libre Baskerville', serif;
+        }
+       
+        .copy-right {
+    background-color: #002858;
+    padding: 20px 0;
+    color: #ffffff;
+}
+        .site-footer {
+    background-color: #003a6a; 
+    color: #ffffff;
+    position: relative;
+    font-family: 'Courgette', cursive;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+}
+         body {
+    position: relative; 
+  }
+  .affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+  .navbar {
+    margin-bottom: 0px;
+  }
+
+
+  .affix + .container-fluid {
+    padding-top: 70px;
+  }
+    </style> 
+    <style>
+               [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+        .enq_fixedbtn {
+    position: fixed;
+    right: -65px;
+    top: 50%;
+    background: #003a6a;
+  
+    color: #fff;
+    border: 0;
+    padding: 8px 12px;
+    font-weight: 500;
+    z-index: 9;
+    transform: translateY(-50%) rotate(-90deg);
+  
+    transition: .3s ease-in-out;
+    letter-spacing: 3px;
+   
+}
+
+        .enq_fixedbtn:hover
+        {
+            background-color:#ffc107;
+            text-decoration:none;
+            color:white;
+        }
+
+        .CenterLogin {
+    position: fixed;
+    right: -61px;
+    top: 24%;
+    background: #036337;
+  
+    color: #fff;
+    border: 0;
+    padding: 8px 12px;
+    font-weight: 500;
+    z-index: 9;
+    transform: translateY(-50%) rotate(-90deg);
+  
+    transition: .3s ease-in-out;
+    letter-spacing: 3px;
+   
+}
+
+        .CenterLogin:hover
+        {
+            background-color:fuchsia;
+            text-decoration:none;
+            font-weight:bold;
+            color:#fff;
+        }
+         .StudentLogin {
+    position: fixed;
+    right: -64px;
+    top: 77%;
+    background: #036337;
+  
+    color: #fff;
+    border: 0;
+    padding: 8px 12px;
+    font-weight: 500;
+    z-index: 9;
+    transform: translateY(-50%) rotate(-90deg);
+  
+    transition: .3s ease-in-out;
+    letter-spacing: 3px;
+   
+}
+
+        .StudentLogin:hover
+        {
+            background-color:fuchsia;
+            text-decoration:none;
+            font-weight:bold;
+            color:#fff;
+        }
+    </style> 
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <form id="form1" runat="server">
+    <div>
+      
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="container-fluid">
+            <div class="row">
+                
+              <div class="col-12">
+                  <div class="row mt-3 mb-2" style="line-height:10px;">
+                      <div class="d-lg-block d-none col-lg-4 col-sm-12">
+                          <span>
+                       <a href="https://www.facebook.com/npcvb.skilldevelopment" style="text-decoration:none;"><i class="fa fa-facebook" style="color:blue;font-size:20px;"></i></a> |&nbsp;<i class="fa fa-twitter" style="color:deepskyblue;font-size:20px;"></i> | &nbsp;<i class="fa fa-instagram" style="color:#e942ad;font-size:20px;"></i> |&nbsp;<i class="fa fa-youtube"  style="color:red;font-size:20px;"></i> |</span>
+                          </div>
+                                      <div class="col-lg-1 col-sm-12 pt-3" style="text-align:left;">
+                                          <div id="google_translate_element"></div>
+                                      </div>   
+                        <script type="text/javascript">  
+                               function googleTranslateElementInit() {  
+                               new google.translate.TranslateElement  
+                               ({ pageLanguage: 'en',   
+                               layout: google.translate.TranslateElement.InlineLayout.SIMPLE },   
+                               'google_translate_element');  
+                           }  
+</script><script type="text/javascript"   
+src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">  
+</script>    
+                      
+                      <div class="col-lg-2 col-sm-12 pt-3 mb-2" style="text-align:right;"><a href="CenterRegister.aspx" style="text-decoration:none; color:red;"><span class="blink" style="color:white; background-color:red; border:solid 1px red; padding:5px; border-radius:10px;">Apply For Center</span></a> </div>
+                  
+                  <div class="d-lg-block d-none col-lg-2 col-sm-12 pt-3" style="text-align:center;"><i class="fas fa-envelope" style="color:#e99929; font-size:20px;"></i><span style="font-size:16px;"> info@npcvb.com</span> </div>
+
+                   
+                 <div class="d-lg-block d-none col-lg-3 col-sm-12 pt-3"><i class="fas fa-phone" style="color:blue;font-size:20px;"></i><span style="font-size:16px;">  +91-7017650600, +91-9368332335 </span><br />
+                     <span style="font-size:13px;">
+                     Timing:- Morning 10:00 Am To Evening 06:00 Pm
+                     </span>
+                    
+                     </div>
+                  </div>
+              </div>
+                <div class="col-12" style="">
+                   
+                    <div class="row pt-2 pb-2" style="background-color: #003a6a;">
+
+                        <div class="d-none d-lg-block col-lg-3 col-md-3 mt-3 mb-3" style="">
+                            
+                            <img src="Image/nlogo.png" class="img-fluid" style="width: 95%;" />
+
+                        </div>
+                        <div class="d-none d-lg-block col-lg-6 col-md-6 m-0 p-0" style="text-align: center;">
+                            <span style="font-weight: bold;"><span style="font-weight: bold;" class="sel">राष्ट्रीय पैरामेडिकल काउंसिल एंड वोकेशनल बोर्ड कौशल विकास</span><br />
+                                <span class="sel" style="color: #99c6fc;">NATIONAL PARAMEDICAL COUNCIL AND VOCATIONAL BOARD SKILL DEVELOPMENT
+                                </span>
+                                <br />
+                                <span class="sel blink" style="color: #ffea00;">भारत सरकार द्वारा मान्यता प्राप्त
+                                </span></span>
+                            <br />
+                            <span style="font-size: 12px; text-align: center;" class="">
+                                <span style="color: white;">An Autonomous institution Associated With Yugal Educational Hub Incorporated Under Sec. 8 Rac Act 2013, Ministry Of Corporate Affairs Govt of India,Regd Under Act 1882,Regd By Department of Labour NCT Delhi,MSME,NITI AAYOG,QCI,</span>
+                                <br />
+                                <span style="color: khaki;">ISO-QRO Govt of India | Authorised Member:- Indian Yoga Association Running Under Guideline National Education Policy,</span><br />
+                                <span style="color: #99c6fc;">1986 Guideline (MHRD) Govt. Of India | Authorised By:- Ministry of Skill Development and Entrepreneurship,Ministry Of</span>
+                                <br />
+                                <span style="color: #cbfcc3;">Electronics and Information Technology, Ministry of Home Affairs, Ministry of Youth Affairs and Sports, Ministry of Women and Child Development, Govt. Of India</span>
+                            </span>
+
+                        </div>
+                        <div class="d-none d-lg-block col-lg-3 col-md-3 mt-3">
+                            <img src="Image/msme-new.png" class="img-fluid" style="width: 85%;" />
+                        </div>
+
+                         <div class="d-lg-none d-md-block col-3 mt-4" style="">
+
+                            <img src="Image/nlogo.png" class="img-fluid" />
+
+                        </div>
+                        <div class="d-lg-none d-md-block col-6 m-0 p-0" style="text-align: center;">
+                            <span style="font-weight: bold;"><span style="font-weight: bold; color:white;font-family: 'Philosopher', sans-serif;">राष्ट्रीय पैरामेडिकल काउंसिल एंड वोकेशनल बोर्ड कौशल विकास</span><br />
+                                <span style="color: #99c6fc;font-family: 'Philosopher', sans-serif;">NATIONAL PARAMEDICAL COUNCIL AND VOCATIONAL BOARD SKILL DEVELOPMENT
+                                </span>
+                                <br />
+                                <span class="blink" style="color: #ffea00;font-family: 'Philosopher', sans-serif;">भारत सरकार द्वारा मान्यता प्राप्त
+                                </span></span>
+                            <br />
+                           
+
+                        </div>
+                        <div class="d-lg-none d-md-block col-3 mt-4">
+                            <img src="Image/msme-new.png" class="img-fluid"/>
+                        </div>
+                    </div>
+                        
+           <div class="row">
+               <div class="col-12">
+                   <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197" style="">
+  
+  <div class="collapse navbar-collapse" >
+      
+    
+    <ul class="navbar-nav" style="width:100%; padding-left:20px!important;">
+      <li class="nav-item">
+      <a class="nav-link mainmenu mr-5 pl-4 bg-info btn-block" href="Default.aspx">Home</a>
+    </li>
+    <li class="nav-item" style="">
+        <asp:Menu ID="mnuAboutUs" runat="server" Orientation="Vertical" DynamicEnableDefaultPopOutImage="false" StaticEnableDefaultPopOutImage="false" Width="150px" CssClass="bg-success mainmenu"
+             Height="39px" ForeColor="White" DynamicMenuItemStyle-ForeColor="White" StaticMenuStyle-HorizontalPadding="35px" 
+            StaticMenuStyle-VerticalPadding="1px" dynamichorizontaloffset="-110" dynamicverticaloffset="30" StaticDisplayLevels="1" DynamicMenuItemStyle-BackColor="#003a6a"
+             DynamicHoverStyle-BackColor="Maroon" DynamicHoverStyle-ForeColor="Yellow" DynamicMenuItemStyle-HorizontalPadding="10px" DynamicMenuItemStyle-VerticalPadding="10px">
+            <Items>
+                <asp:MenuItem Text="About Us >" Value="About Us" >
+                    <asp:MenuItem Text="Counsil Profile" Value="Counsil Profile" NavigateUrl="~/AboutUs.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Our Vision and Mission" Value="Our Vision and Mission" NavigateUrl="~/OurMissionVision.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Our Awesome Team" Value="Our Awesome Team" NavigateUrl="~/OurAwesomeTeam.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Managing Director Message" Value="Managing Director Message" NavigateUrl="~/MDMsg.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Deputy Director Message" Value="Deputy Director Message" NavigateUrl="~/DDMsg.aspx"></asp:MenuItem>
+                </asp:MenuItem>
+            </Items>
+        </asp:Menu>
+      <%--<a class="nav-link mainmenu mr-5 pl-5 bg-secondary btn-block" href="#">About Us <i class="fa fa-angle-right" style="float:right;"></i>
+
+      </a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="AboutUs.aspx"></a></li>
+            <li class="dropdown-item"><a href="OurMissionVision.aspx"></a></li>
+            <li class="dropdown-item"><a href="#"></a></li>
+            <li class="dropdown-item"><a href="MDMsg.aspx"></a></li>
+            <li class="dropdown-item"><a href="DDMsg.aspx"></a></li>
+        </ul>--%>
+    </li>
+         <li class="nav-item">
+      <a class="nav-link mainmenu mr-5 pl-3 bg-warning btn-block" href="whynpcv.aspx" style="text-align:center;">Why NPCVB?</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link mainmenu mr-5 pl-3 bg-dark btn-block" href="Centers.aspx" style="text-align:center;">Centers</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link mainmenu mr-5 pl-3 bg-primary btn-block" href="Courses.aspx" style="text-align:center;">Course</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link mainmenu mr-5 pl-3 bg-success btn-block" href="gallery.aspx" style="text-align:center;">Gallery</a>
+    </li>
+       <li class="nav-item">
+       <asp:Menu ID="downloadmenu" runat="server" Orientation="Vertical" DynamicEnableDefaultPopOutImage="false" StaticEnableDefaultPopOutImage="false" Width="150px" CssClass="bg-danger mainmenu"
+             Height="39px" ForeColor="White" DynamicMenuItemStyle-ForeColor="White" StaticMenuStyle-HorizontalPadding="35px" StaticMenuStyle-VerticalPadding="1px" 
+           dynamichorizontaloffset="-110" dynamicverticaloffset="30" StaticDisplayLevels="1" DynamicMenuItemStyle-BackColor="#003a6a" DynamicHoverStyle-BackColor="Maroon" 
+             DynamicHoverStyle-ForeColor="Yellow" DynamicMenuItemStyle-HorizontalPadding="10px" DynamicMenuItemStyle-VerticalPadding="10px">
+            <Items>
+                <asp:MenuItem Text="Downloads >" Value="Downloads" >
+               
+                </asp:MenuItem>
+            </Items>
+        </asp:Menu>
+    </li>
+        <li class="nav-item">
+      <a class="nav-link mainmenu mr-4 pl-3 bg-secondary btn-block" href="ContactUs.aspx" style="text-align:center;">Contact Us</a>
+    </li>
+        <li class="nav-item">
+      <a class="nav-link mainmenu mr-4 pl-3 bg-info btn-block" href="PaymentLinks.aspx" style="text-align:center;">Payment Links</a>
+    </li>
+    
+    </ul>
+
+    
+  </div>
+</nav>
+               </div>
+           </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="container-fluid d-md-none mb-1" style="text-align:center;">
+                               
+                          <span>
+                       <a href="https://www.facebook.com/npcvb.skilldevelopment" style="text-decoration:none;"><i class="fa fa-facebook" style="color:blue;font-size:20px;"></i></a> |&nbsp;<i class="fa fa-twitter" style="color:deepskyblue;font-size:20px;"></i> | &nbsp;<i class="fa fa-instagram" style="color:#e942ad;font-size:20px;"></i> |&nbsp;<i class="fa fa-youtube"  style="color:red;font-size:20px;"></i> |</span>
+                          
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myDIV");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+            function func() {
+                var x = document.getElementById("aboutDiv");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }            
+        </script>
+        <a href="#" class="btn btn-block mt-2" style="background-color: #003a6a; color:white;" onclick="myFunction()">MENU</a>
+
+        <div id="myDIV" style="display:none; width:100%;">
+            <a href="Default.aspx" class="btn btn-block m-0 p-0" style="background-color: #003a6a; border:solid 1px white; color:white;">Home</a>
+            <a href="#" class="btn btn-block m-0 p-0" onclick="func()" style="background-color: #003a6a;  border:solid 1px white; color:white;">About Us ></a>
+             <div id="aboutDiv" style="display:none; width:100%;">
+                 <a href="AboutUs.aspx" class="btn btn-block  m-0 p-0" style="background-color: maroon; border:solid 1px white; color:yellow;">Counsil Profile</a>
+            <a href="OurMissionVision.aspx" class="btn btn-block m-0 p-0" style="background-color: maroon; border:solid 1px white; color:yellow;">Our Vision and Mission</a>
+            <a href="OurAwesomeTeam.aspx" class="btn btn-block m-0 p-0" style="background-color: maroon; border:solid 1px white; color:yellow;">Our Awesome Team</a>
+            <a href="MDMsg.aspx" class="btn btn-block m-0 p-0" style="background-color: maroon; border:solid 1px white; color:yellow;">Managing Director Message</a>
+            <a href="DDMsg.aspx" class="btn btn-block m-0 p-0" style="background-color: maroon; border:solid 1px white; color:yellow;">Deputy Director Message</a>
+
+                 </div>
+            <a href="whynpcv.aspx" class="btn btn-block  m-0 p-0" style="background-color: #003a6a; border:solid 1px white; color:white;">Why NPCVB?</a>
+            <a href="Centers.aspx" class="btn btn-block m-0 p-0" style="background-color: #003a6a; border:solid 1px white; color:white;">Centers</a>
+            <a href="Courses.aspx" class="btn btn-block m-0 p-0" style="background-color: #003a6a; border:solid 1px white; color:white;">Course</a>
+            <a href="gallery.aspx" class="btn btn-block m-0 p-0" style="background-color: #003a6a; border:solid 1px white; color:white;">Gallery</a>
+            <a href="#" class="btn btn-block m-0 p-0" style="background-color:#003a6a; border:solid 1px white; color:white;">Downloads ></a>
+              
+                 <a href="ContactUs.aspx" class="btn btn-block  m-0 p-0" style="background-color: #003a6a; border:solid 1px white; color:white;">Contact Us</a>
+            <a href="PaymentLinks.aspx" class="btn btn-block m-0 p-0" style="background-color: #003a6a; border:solid 1px white; color:white;">Payment Details</a>
+           
+          
+        </div>
+    </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        
+       <div class="container-fluid">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+           </div>
+            
+          <div class="container-fluid">
+            <div class="row site-footer pt-2 pb-1">
+                <div class="col-lg-5 col-sm-2"></div>
+               <div class="col-lg-3 col-sm-8 mb-2" style="text-align:center; background-color:white; border-radius:10px;" >
+                   <a href="OurBestPerformer.aspx" class="" style="text-decoration:none;color:#003a6a;"><h2>Our Best Performer</h2></a>
+               </div>
+                <div class="col-lg-4 col-sm-2"></div>
+                <div class="col-lg-3 col-12 mt-2" style="text-align:center;">
+               <h4>Address </h4>
+                     <p ><span style="font-family: 'Courgette', cursive; font-size:14px;">Organization office Roorkee
+
+ Green Park Colony Near Rampur Chungi Roorkee, Distt Haridwar Uttarakhand 247667
+<br />
+                        Phone No :
+                        +91-7017650600, +91-9368332335<br />
+
+                        Email-ID:
+                        info@npcvb.com
+                                                   </span></p>
+                     <h4>Visits</h4>
+                    <p>
+                          <div align='center'><a href='https://www.hit-counts.com/'><img src='http://www.hit-counts.com/counter.php?t=MTQ1NTY2NA==' border='0' alt='logo designers'></a></div>
+                    </p>
+                </div>
+                <div class="col-lg-3 col-12 mt-2" style="text-align:center;">
+                 <h4>  Why NPCVB?</h4>
+                    <p style="text-align:justify;font-family: 'Courgette', cursive;font-size:15px;">It is no brainer to choose an institute of a highlighted name are the institute which comes first in the advertise
+                         Asian but every candidate must approach towards the quality education of the institute and its genuinity of the particular and the relationships 
+                        with Derek organisations of the government institutions we claim to be chosen by you because we are recognised by government of India and duly 
+                        registered.<br />
+                        <a href="whynpcv.aspx" class="badge badge-warning" style="text-decoration-line:none; padding:5px; font-size:14px; float:right;">Read More</a>
+                          </p>
+                    
+                </div>
+                <div class="col-lg-3 col-12 mt-2" style="font-size:15px;font-family: 'Courgette', cursive;">
+                     <h4 style="text-align:center;">Useful Links </h4>
+                    <div class="row" >
+                        <div class="col-12 mb-2" style="text-align:center;"> <a href="Default.aspx" class="footmen" style="">Home</a></div>
+                        <div class="col-12 mb-2" style="text-align:center;"><a href="AboutUs.aspx" class="footmen" style="">Council Profile</a></div>
+                        <div class="col-12 mb-2" style="text-align:center;"> <a href="StudentLogin.aspx" class="footmen" style="">Student Login</a></div>
+                        <div class="col-12 mb-2" style="text-align:center;"><a href="CenterLogin.aspx" class="footmen" style="">Center Login</a></div>
+                        <div class="col-12 mb-2" style="text-align:center;"> <a href="DistributorLogin.aspx" class="footmen" style="">Distributor Login</a></div>
+                        <div class="col-12 mb-2" style="text-align:center;"> <a href="ContactUs.aspx" class="footmen" style="">Contact Us</a></div>
+                        <div class="col-12 mb-2" style="text-align:center;"> <a href="PaymentLinks.aspx" class="footmen" style="">Payment Links</a></div>
+                        <div class="col-12 mb-2" style="text-align:center;"> <a href="TermsAndCondition.aspx" class="footmen" style="">Terms and Condition</a></div>
+                        <div class="col-12" style="text-align:center;"> <a href="PrivacyPolicy.aspx" class="footmen" style="">Privacy Policy</a></div>
+                       
+                    </div>
+                </div>
+                 <div class="col-lg-3 col-12 mt-2" style="text-align:center;">
+                   
+                     <h4>Get In Touch</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d432.54401084022055!2d77.8883017!3d29.8541183!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9231378f666e73a2!2sNPCVB%20SKILL%20DEVELOPMENT%20PVT%20Ltd!5e0!3m2!1sen!2sin!4v1605953983350!5m2!1sen!2sin" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                   
+                    
+                </div>
+                 
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                 <div class="col-lg-1 col-sm-1 fixed-bottom p-4 d-none d-md-block" style="text-align:left; background-color:#c2bb45; bottom:150px; border-radius:50%;">
+                    <a href="StudentRegister.aspx">
+                        <span style="color:black; font-weight:bold; font-size:14px;">ONLINE <br />ADMISSION</span>
+                    </a>                  
+                    </div>
+                 <div class="col-1 fixed-bottom" style="text-align:left;">
+                    <a class="blink" href="CenterRegister.aspx">
+                        <img src="GIFs/apply-now_01.gif" class="img-fluid" style="width:80px;"/>
+                    </a>
+                  
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-12 copy-right" style="text-align:center;">
+                   <span class=""> Designed and Developed By<a href="https://jaynatechnologies.com/" target="_blank" style="text-decoration:none; color:#fd5308;"> Jayna Technologies</a> <%--| <a href="AdminLogin.aspx" style="text-decoration:none; color:#fff;">Admin Login</a>--%></span>
+                </div>
+            
+              
+               
+            </div>
+            
+        </div>
+          <div class="container-fluid">
+                      <div class="m-0 p-0">
+                        <a class="CenterLogin" href="CenterLogin.aspx" style="text-align:center;">Center Login</a>
+                          
+                              <a class="enq_fixedbtn" data-toggle="modal" data-target="#ModalEnq" style="text-align:center;">
+                                  Quick Enquiry
+                              </a>
+                          <a class="StudentLogin" href="StudentLogin.aspx" style="text-align:center;">Student Login</a>
+                      </div>
+                <div class="row">
+                            <div class="col-12">
+                                <div id="ModalEnq" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Enquiry Form</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-12">Full Name</div>
+                                                    <div class="col-12"><asp:TextBox ID="txtfullName" runat="server" CssClass="form-control"></asp:TextBox></div>
+                                                    <div class="col-6">Email</div>
+                                                    <div class="col-6">Phone Number</div>
+                                                     <div class="col-6"><asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox></div>
+                                                    <div class="col-6"><asp:TextBox ID="txtPhone" runat="server" CssClass="form-control"></asp:TextBox></div>
+                                                    <div class="col-12">Message</div>
+                                                    <div class="col-12"><asp:TextBox ID="txtMessage" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox></div>
+                                                    <div class="col-12">State</div>
+                                                     <div class="col-12">
+                                                        <asp:DropDownList ID="ddlState" runat="server" CssClass="form-control">
+                                                            <asp:ListItem Text="Select State" Value="0" Selected="True" Disabled="Diabled"></asp:ListItem>
+                                                            <asp:ListItem Text="Andaman and Nicobar Island" Value="1"></asp:ListItem>
+                                                            <asp:ListItem Text="Andra Pradesh" Value="2"></asp:ListItem>
+                                                            <asp:ListItem Text="Arunachal Pradesh" Value="3"></asp:ListItem>
+                                                            <asp:ListItem Text="Assam" Value="4"></asp:ListItem>
+                                                            <asp:ListItem Text="Bihar" Value="5"></asp:ListItem>
+                                                            <asp:ListItem Text="Chandigarh" Value="6"></asp:ListItem>
+                                                            <asp:ListItem Text="Chhatisgarh" Value="7"></asp:ListItem>
+                                                            <asp:ListItem Text="Dadar and Nagar Haveli" Value="8"></asp:ListItem>
+                                                            <asp:ListItem Text="Daman and Diu" Value="9"></asp:ListItem>
+                                                            <asp:ListItem Text="Delhi" Value="10"></asp:ListItem>
+                                                            <asp:ListItem Text="Goa" Value="11"></asp:ListItem>
+                                                            <asp:ListItem Text="Gujrat" Value="12"></asp:ListItem>
+                                                            <asp:ListItem Text="Haryana" Value="13"></asp:ListItem>
+                                                            <asp:ListItem Text="Himachal Pradesh" Value="14"></asp:ListItem>
+                                                            <asp:ListItem Text="Jammu and Kashmir" Value="15"></asp:ListItem>
+                                                            <asp:ListItem Text="Jharkhand" Value="16"></asp:ListItem>
+                                                            <asp:ListItem Text="Karnataka" Value="17"></asp:ListItem>
+                                                            <asp:ListItem Text="Kerala" Value="18"></asp:ListItem>
+                                                            <asp:ListItem Text="Lakshdeep" Value="19"></asp:ListItem>
+                                                            <asp:ListItem Text="Madhya Pradesh" Value="20"></asp:ListItem>
+                                                            <asp:ListItem Text="Maharashtra" Value="21"></asp:ListItem>
+                                                            <asp:ListItem Text="Manipur" Value="22"></asp:ListItem>
+                                                            <asp:ListItem Text="Meghalaya" Value="23"></asp:ListItem>
+                                                            <asp:ListItem Text="Mizoram" Value="24"></asp:ListItem>
+                                                            <asp:ListItem Text="Nagaland" Value="25"></asp:ListItem>
+                                                            <asp:ListItem Text="Odisha" Value="26"></asp:ListItem>
+                                                            <asp:ListItem Text="Pondicherry" Value="27"></asp:ListItem>
+                                                            <asp:ListItem Text="Punjab" Value="28"></asp:ListItem>
+                                                            <asp:ListItem Text="Rajasthan" Value="29"></asp:ListItem>
+                                                            <asp:ListItem Text="Sikkim" Value="30"></asp:ListItem>
+                                                            <asp:ListItem Text="Tamil Nadu" Value="31"></asp:ListItem>
+                                                            <asp:ListItem Text="Telangana" Value="32"></asp:ListItem>
+                                                            <asp:ListItem Text="Tripura" Value="33"></asp:ListItem>
+                                                            <asp:ListItem Text="Uttar Pradesh" Value="34"></asp:ListItem>
+                                                            <asp:ListItem Text="Uttarakhand" Value="35"></asp:ListItem>
+                                                            <asp:ListItem Text="West Bengal" Value="36"></asp:ListItem>
+                                                            
+                                                        </asp:DropDownList>
+                                                    </div>
+                                                     <div class="col-6">City</div>
+                                                    
+                                                    <div class="col-6">Pin Code</div>
+                                                     <div class="col-6"><asp:TextBox ID="txtCity" runat="server" CssClass="form-control"></asp:TextBox></div>
+                                                   
+                                                    <div class="col-6"><asp:TextBox ID="txtPinCode" runat="server" CssClass="form-control"></asp:TextBox></div>
+                                                     <div class="col-12 mt-2" style="text-align:center;">
+                                                         <asp:checkbox ID="chkCheck" runat="server" Text="&nbsp;I agree to all the" Checked="false" AutoPostBack="true" OnCheckedChanged="chkCheck_CheckedChanged" />
+                                                         <a href="TermsAndCondition.aspx">Terms And Condition</a>
+                                                     </div>
+                                                </div>
+                                                
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <asp:UpdatePanel ID="pnlTerm" runat="server">
+                                                    <ContentTemplate>
+                                                        <asp:Button CssClass="btn btn-success" ID="btnSubmit" runat="server" Text="Submit" Enabled="false" OnClick="btnSubmit_Click1" />        
+                                                    </ContentTemplate>
+                                                    <Triggers>
+                                                        <asp:AsyncPostBackTrigger ControlID="chkCheck" EventName="CheckedChanged" />
+                                                        <asp:PostBackTrigger ControlID="btnSubmit" />
+                                                    </Triggers>
+                                                    </asp:UpdatePanel>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+    </div>
+        <script src="JS/efluidmenu.js"></script>
+        <script type="text/javascript">
+        function blink_text() {
+            $('.blink').fadeOut(2000);
+            $('.blink').fadeIn(500);
+        }
+        setInterval(blink_text, 1000);
+
+    </script>
+        <script>
+            window.addEventListener('contextmenu', function (e) {
+                alert("Not Allowed");
+                e.preventDefault();
+            }, false);
+
+            //$(document).ready(function () {
+            //    $('#Selector').bind('copy paste', function (e) {
+            //        e.preventDefault();
+            //    });
+            //});
+
+
+            function disableselect(e) {
+                return false;
+            }
+
+            function reEnable() {
+                return true;
+            }
+
+            document.onselectstart = new Function("return false");
+            
+            if (window.sidebar) {
+                document.onmousedown = disableselect;
+                document.onclick = reEnable;
+                alert("Not Allowed");
+            }
+        </script>
+    </form>
+</body>
+</html>
